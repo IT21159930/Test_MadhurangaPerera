@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './AddInformation.css';
 
 export default function AddInformation() {
   const [d1, setD1] = useState("");
@@ -37,113 +38,143 @@ export default function AddInformation() {
 
   return (
     <div className="container">
+     
+      <div className="stepper">
+        <div className="step active">1</div>
+        <div className="step active">2</div>
+        <div className="step active">3</div>
+        <div className="step">4</div>
+        <div className="step">5</div>
+      </div>
+
       <form onSubmit={sendData}>
-        <div className="form-group">
-          <b><font size="4">Applicant's Name</font></b>
-          <p></p>
-          <label htmlFor="d1">Street Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="d1"
-            placeholder="Enter first name"
-            value={d1}
-            onChange={(e) => setD1(e.target.value)}
-          />
+        <h3>3. Delivery and Contact Information</h3>
+        
+        <div className="row">
+          <div className="col-6 form-group">
+            <label htmlFor="d1">Street Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="d1"
+              placeholder="Street Name"
+              value={d1}
+              onChange={(e) => setD1(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="col-6 form-group">
+            <label htmlFor="d2">Apartment, Suite, Etc.</label>
+            <input
+              type="text"
+              className="form-control"
+              id="d2"
+              placeholder="Apartment, Suite, Etc."
+              value={d2}
+              onChange={(e) => setD2(e.target.value)}
+              required
+            />
+          </div>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="d2">Apartment</label>
-          <input
-            type="text"
-            className="form-control"
-            id="d2"
-            placeholder="Enter last name"
-            value={d2}
-            onChange={(e) => setD2(e.target.value)}
-          />
+        <div className="row">
+          <div className="col-6 form-group">
+            <label htmlFor="d3">City</label>
+            <input
+              type="text"
+              className="form-control"
+              id="d3"
+              placeholder="City"
+              value={d3}
+              onChange={(e) => setD3(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="col-6 form-group">
+            <label htmlFor="d4">State</label>
+            <input
+              type="text"
+              className="form-control"
+              id="d4"
+              placeholder="State"
+              value={d4}
+              onChange={(e) => setD4(e.target.value)}
+              required
+            />
+          </div>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="d3">City</label>
-          <input
-            type="text"
-            className="form-control"
-            id="d3"
-            placeholder="Enter City"
-            value={d3}
-            onChange={(e) => setD3(e.target.value)}
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="d4">State</label>
-          <input
-            type="text"
-            className="form-control"
-            id="d4"
-            placeholder="Enter State"
-            value={d4}
-            onChange={(e) => setD4(e.target.value)}
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="d5">Postal</label>
-          <input
-            type="text"
-            className="form-control"
-            id="d5"
-            placeholder="Enter Postal"
-            value={d5}
-            onChange={(e) => setD5(e.target.value)}
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="d6">Country</label>
-          <input
-            type="text"
-            className="form-control"
-            id="d6"
-            placeholder="Enter Country"
-            value={d6}
-            onChange={(e) => setD6(e.target.value)}
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="d7">Delivery Instructions (Optional)</label>
-          <input
-            type="text"
-            className="form-control"
-            id="d7"
-            placeholder="Delivery Instructions"
-            value={d7}
-            onChange={(e) => setD7(e.target.value)}
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="d8">Email</label>
-          <input
-            type="text"
-            className="form-control"
-            id="d8"
-            placeholder="Email"
-            value={d8}
-            onChange={(e) => setD8(e.target.value)}
-          />
+        <div className="row">
+          <div className="col-6 form-group">
+            <label htmlFor="d5">Postal / Zip Code</label>
+            <input
+              type="text"
+              className="form-control"
+              id="d5"
+              placeholder="Postal / Zip Code"
+              value={d5}
+              onChange={(e) => setD5(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="col-6 form-group">
+            <label htmlFor="d6">Country</label>
+            <input
+              type="text"
+              className="form-control"
+              id="d6"
+              placeholder="Enter Country"
+              value={d6}
+              onChange={(e) => setD6(e.target.value)}
+              required
+            />
+          </div>
         </div>
 
-        <button
-          type="button"
-          className="btn btn-secondary"
-          onClick={() => window.history.back()}
-        >
-          Go Back
-        </button>
-        <button type="submit" className="btn btn-primary">Next</button>
+        <div className="row">
+          <div className="col-12 form-group">
+            <label htmlFor="d7">Delivery Instructions (Optional)</label>
+            <input
+              type="text"
+              className="form-control"
+              id="d7"
+              placeholder="Delivery Instructions"
+              value={d7}
+              onChange={(e) => setD7(e.target.value)}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 form-group">
+            <label htmlFor="d8">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              id="d8"
+              placeholder="Email"
+              value={d8}
+              onChange={(e) => setD8(e.target.value)}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="buttons">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => window.history.back()}
+            style={{ marginRight: '10px' }}
+          >
+            Go Back
+          </button>
+          <button type="submit" className="btn btn-warning">Next Step</button>
+        </div>
       </form>
     </div>
   );

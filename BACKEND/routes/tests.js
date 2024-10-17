@@ -9,14 +9,11 @@ router.route("/add").post((req,res)=>{
     const oname = req.body.oname;
     const cname = req.body.cname;
     const age = req.body.age; 
-    const file = req.body.file;
   
-
     const newInformation = new Information({
         oname,
         cname,
-        age,
-        file
+        age
     })
 
     newInformation.save().then(()=>{

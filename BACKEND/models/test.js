@@ -15,12 +15,7 @@ const informationSchema = new Schema({
     age : {
         type : String,
         required : true
-    },
-    file : {
-        type : String,
-        required : true
-    }
-    
+    }    
     
 
 })

@@ -1,8 +1,16 @@
 import React from "react";
+import './AddInformation.css';
 
 export default function AddInformation() {
   return (
     <div className="container">
+      <div className="stepper">
+        <div className="step active">1</div>
+        <div className="step active">2</div>
+        <div className="step active">3</div>
+        <div className="step active">4</div>
+        <div className="step active">5</div>
+      </div>
       <br />
       <h1>Thank You for submitting your Application</h1>
       <br />
@@ -26,6 +34,7 @@ export default function AddInformation() {
             type="button"
             className="btn btn-secondary"
             onClick={() => { window.history.back(); }}
+            style={{ marginRight: '10px' }}
           >
             Go Back
           </button>

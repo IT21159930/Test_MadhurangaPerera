@@ -9,10 +9,10 @@ export default function ShowTest() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8070/test");
+        const response = await axios.get("http://localhost:8070/test/all");
         setTests(response.data);
       } catch (error) {
-        console.error("Error fetching test:", error);
+        console.error("Error fetching tests:", error);
       } finally {
         setLoading(false);
       }
@@ -27,7 +27,7 @@ export default function ShowTest() {
 
   return (
     <div className="container">
-       <div className="stepper">
+      <div className="stepper">
         <div className="step active">1</div>
         <div className="step active">2</div>
         <div className="step active">3</div>
@@ -37,40 +37,44 @@ export default function ShowTest() {
       <br></br>
       <h1>Review / Sign / Submit</h1>
       <br></br>
+      <h3>2. Address Information</h3>
       {tests.map((test, index) => (
         <div key={index}>
-          <br />
-          <div className="container" style={{ backgroundColor: "lightgray" }}>
-            <h3>1. Personal Information</h3>
-            <div className="row">
-              <Field label="First Name" value={test.oname} />
-              <Field label="Last Name" value={test.cname} />
-            </div>
-            <div className="row">
-              <Field label="Age" value={test.age} />
-              
-            </div>
+          <div className="row">
+            <Field label="Street" value={test.d1} />
+            <Field label="Apartment" value={test.d2} />
           </div>
-          <br></br>
-          <div className="buttons">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => window.history.back()}
-              style={{ marginRight: '10px' }}
-            >
-              Go Back
-            </button>
-            <button
-              type="button"
-              className="btn btn-warning"
-              onClick={() => { window.location.href = "/f"; }}
-            >
-              Next
-            </button>
+          <div className="row">
+            <Field label="City" value={test.d3} />
+            <Field label="State" value={test.d4} />
+          </div>
+          <div className="row">
+            <Field label="Postal" value={test.d5} />
+            <Field label="Contact Number" value={test.d6} />
+          </div>
+          <div className="row">
+            <Field label="Email" value={test.d7} fullWidth />
           </div>
         </div>
       ))}
+      <br />
+      <div className="buttons">
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={() => window.history.back()}
+          style={{ marginRight: '10px' }}
+        >
+          Go Back
+        </button>
+        <button
+          type="button"
+          className="btn btn-warning"
+          onClick={() => { window.location.href = "/finl"; }}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }
