@@ -121,21 +121,21 @@ export default function AddInformation() {
           </div>
 
           <div className="col-6 form-group">
-  <label htmlFor="d6">Contact Number</label>
-  <input
-    type="number"
-    className="form-control"
-    id="d6"
-    placeholder="Enter 10-digit Contact Number"
-    value={d6}
-    onChange={(e) => {
-      if (e.target.value.length <= 10) {
-        setD6(e.target.value);
-      }
-    }}
-    required
-  />
-</div>
+            <label htmlFor="d6">Contact Number</label>
+            <input
+              type="number"
+              className="form-control"
+              id="d6"
+              placeholder="Enter 10-digit Contact Number"
+              value={d6}
+              onChange={(e) => {
+                if (e.target.value.length <= 10) {
+                setD6(e.target.value);
+              }
+              }}
+               required
+              />
+          </div>
 
         </div>
 
